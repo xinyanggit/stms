@@ -6,7 +6,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<center>测试主页面</center><br>
+	
 	<a href="/stms/to-welcome.action">GO</a>
 	
 </body>

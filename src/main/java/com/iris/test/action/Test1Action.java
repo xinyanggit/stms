@@ -5,7 +5,6 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Controller;
 
 import com.iris.test.service.ITest1Service;
-import com.iris.test.service.TestSendSMS;
 import com.iris.test.webservice.client.IHelloWorld;
 import com.iris.test.webservice.idcard.com._36wu.IdCardServiceSoap;
 import com.iris.test.webservice.mobileInfows.cn.com.webxml.MobileCodeWSSoap;
@@ -33,9 +32,10 @@ public class Test1Action extends ActionSupport {
 
 	@Override
 	public String execute() throws Exception {
+		System.out.println("测试开始......");
 
 		// 1、调用短信接口测试
-		TestSendSMS.sendSMS();
+		// TestSendSMS.sendSMS();
 
 		// 2、hibernate测试
 		// List list = test1Service.findAll();
@@ -63,6 +63,7 @@ public class Test1Action extends ActionSupport {
 		System.out.println(idCard.getIdcard());
 		System.out.println(idCard.getSex());*/
 
+		System.out.println("测试结束。");
 		return SUCCESS;
 	}
 
