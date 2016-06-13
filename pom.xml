@@ -1,0 +1,283 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.iris.test</groupId>
+  <artifactId>stms</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>stms Maven Webapp</name>
+  <url>http://www.irissz.com</url>
+  
+  <organization>
+	  <name>iris system</name>
+	  <url>http://www.irissz.com</url>
+  </organization>
+  
+  <properties>
+  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  	<spring.version>3.2.0.RELEASE</spring.version>
+  	<struts2.version>2.3.24</struts2.version>
+  	<hibernate.version>3.6.9.Final</hibernate.version>
+  	<slf4j.version>1.7.2</slf4j.version>
+  	<cxf.version>2.5.1</cxf.version>
+  </properties>
+  
+  <repositories>
+  	<repository>
+  		<id>nexus</id>
+		<name>irisnexus</name>
+		<url>http://nexus.oa.irissz.com:8081/nexus/content/groups/public</url>
+  	</repository>
+  </repositories>
+  
+  <dependencies>
+  	<!-- junit -->
+    <dependency>
+	    <groupId>junit</groupId>
+	    <artifactId>junit</artifactId>
+	    <version>3.8.1</version>
+	    <scope>test</scope>
+    </dependency>
+    
+    <!-- j2ee web -->
+	<dependency>
+		<groupId>javax</groupId>
+		<artifactId>javaee-api</artifactId>
+		<version>6.0</version>
+		<scope>provided</scope>
+	</dependency>
+	<dependency>
+		<groupId>javax</groupId>
+		<artifactId>javaee-web-api</artifactId>
+		<version>6.0</version>
+		<scope>provided</scope>
+	</dependency>
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>servlet-api</artifactId>
+		<version>2.5</version>
+		<scope>provided</scope>
+	</dependency>
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>jstl</artifactId>
+		<version>1.2</version>
+	</dependency>
+	<!-- web end -->
+    
+    <!-- strtus2 begin -->
+    <dependency>
+		<groupId>org.apache.struts</groupId>
+		<artifactId>struts2-core</artifactId>
+		<version>${struts2.version}</version>
+		<exclusions>
+			<exclusion>
+				<groupId>com.sun</groupId>
+				<artifactId>tools</artifactId>
+			</exclusion>
+		</exclusions>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.struts</groupId>
+		<artifactId>struts2-spring-plugin</artifactId>
+		<version>${struts2.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.struts</groupId>
+		<artifactId>struts2-convention-plugin</artifactId>
+		<version>${struts2.version}</version>
+	</dependency>
+	 <!-- strtus2 end -->
+	
+	<!-- spring begin -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-core</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-beans</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context-support</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-expression</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<!-- spring web -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-web</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-webmvc</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<!-- spring aop -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-aop</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-tx</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.aspectj</groupId>
+		<artifactId>aspectjrt</artifactId>
+		<version>1.6.10</version>
+	</dependency>
+	<dependency>
+		<groupId>org.aspectj</groupId>
+		<artifactId>aspectjweaver</artifactId>
+		<version>1.6.10</version>
+	</dependency>
+	<dependency>
+		<groupId>cglib</groupId>
+		<artifactId>cglib-nodep</artifactId>
+		<version>2.2</version>
+	</dependency>
+	<!-- spring orm -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-orm</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-jdbc</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<!-- spring end -->
+	
+	<!-- hibernate start -->
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-core</artifactId>
+		<version>${hibernate.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-ehcache</artifactId>
+		<version>${hibernate.version}</version>
+		<exclusions>
+			<exclusion>
+				<groupId>net.sf.ehcache</groupId>
+				<artifactId>ehcache</artifactId>
+			</exclusion>
+		</exclusions>
+	</dependency>
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-entitymanager</artifactId>
+		<version>${hibernate.version}</version>
+	</dependency>
+	<!-- hibernate end -->
+	
+	<!-- logging begin -->
+	<dependency>
+		<groupId>log4j</groupId>
+		<artifactId>log4j</artifactId>
+		<version>1.2.16</version>
+	</dependency>
+	<!-- logging end -->
+	
+	<!-- database start -->
+	<dependency>
+		<groupId>com.oracle</groupId>
+		<artifactId>ojdbc6</artifactId>
+		<version>11.1.0.7.0</version>
+	</dependency>
+	<dependency>
+		<groupId>com.oracle</groupId>
+		<artifactId>orai18n-mapping</artifactId>
+		<version>11.2.0.1</version>
+	</dependency>
+	<!-- database end -->
+	
+	<dependency>
+		<groupId>c3p0</groupId>
+		<artifactId>c3p0</artifactId>
+		<version>0.9.1.2</version>
+	</dependency>
+	
+	<!-- webService框架 -->
+	<dependency>
+		<groupId>axis</groupId>
+		<artifactId>axis</artifactId>
+		<version>1.4</version>
+	</dependency>
+	
+	<!-- webservice begin -->
+	<!-- cxf -->
+	<dependency>
+		<groupId>org.apache.cxf</groupId>
+		<artifactId>cxf-rt-core</artifactId>
+		<version>${cxf.version}</version>
+		<exclusions>
+			<!-- use javax.mail.mail instead -->
+			<exclusion>
+				<groupId>org.apache.geronimo.specs</groupId>
+				<artifactId>geronimo-javamail_1.4_spec</artifactId>
+			</exclusion>
+			<!-- use javax.activation.activation instead -->
+			<exclusion>
+				<groupId>org.apache.geronimo.specs</groupId>
+				<artifactId>geronimo-activation_1.1_spec</artifactId>
+			</exclusion>
+		</exclusions>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.cxf</groupId>
+		<artifactId>cxf-rt-frontend-jaxws</artifactId>
+		<version>${cxf.version}</version>
+		<exclusions>
+			<!-- see above -->
+			<exclusion>
+				<groupId>org.apache.geronimo.specs</groupId>
+				<artifactId>geronimo-javamail_1.4_spec</artifactId>
+			</exclusion>
+			<exclusion>
+				<groupId>org.apache.geronimo.specs</groupId>
+				<artifactId>geronimo-activation_1.1_spec</artifactId>
+			</exclusion>
+		</exclusions>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.cxf</groupId>
+		<artifactId>cxf-rt-transports-http</artifactId>
+		<version>${cxf.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.cxf</groupId>
+		<artifactId>cxf-rt-ws-security</artifactId>
+		<version>${cxf.version}</version>
+	</dependency>
+	<!-- <dependency>
+		<groupId>org.apache.cxf</groupId>
+		<artifactId>cxf-rt-transports-http-jetty</artifactId>
+		<version>${cxf.version}</version>
+	</dependency> -->
+	<!-- webservice end -->
+    
+  </dependencies>
+  
+  <build>
+    <finalName>stms</finalName>
+  </build>
+</project>
