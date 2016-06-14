@@ -22,6 +22,10 @@
 	<!-- 身份证查询webservice接口 -->
 	<jaxws:client id="idCardServiceSoapClient"  serviceClass="com.iris.test.webservice.idcard.com._36wu.IdCardServiceSoap"  address="http://web.36wu.com/IdCardService.asmx" />
 	
+	<!-- 信用平台对接 -->
+	<jaxws:client id="cdxyWebserviceActionClient" 
+	serviceClass="com.iris.test.webservice.cxpt.ICdxyWebserviceActionPortType"  
+	address="http://118.122.92.102:7712/newCdxyWebservice/services/cdxyservice" />
 	
 </beans>
 

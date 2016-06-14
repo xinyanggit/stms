@@ -1,11 +1,18 @@
 package com.iris.test.action;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.annotation.Resource;
 
+import net.sf.json.JSONObject;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import com.iris.test.service.ITest1Service;
 import com.iris.test.webservice.client.IHelloWorld;
+import com.iris.test.webservice.cxpt.ICdxyWebserviceActionPortType;
 import com.iris.test.webservice.idcard.com._36wu.IdCardServiceSoap;
 import com.iris.test.webservice.mobileInfows.cn.com.webxml.MobileCodeWSSoap;
 import com.opensymphony.xwork2.ActionSupport;
@@ -30,9 +37,12 @@ public class Test1Action extends ActionSupport {
 	@Resource
 	private IdCardServiceSoap idCardServiceSoapClient;
 
+	// 成都诚信平台接口
+	@Autowired
+	private ICdxyWebserviceActionPortType cdxyWebserviceActionClient;
+
 	@Override
 	public String execute() throws Exception {
-		System.out.println("测试开始......");
 
 		// 1、调用短信接口测试
 		// TestSendSMS.sendSMS();
@@ -63,8 +73,102 @@ public class Test1Action extends ActionSupport {
 		System.out.println(idCard.getIdcard());
 		System.out.println(idCard.getSex());*/
 
-		System.out.println("测试结束。");
+		/**
+		 * 7、测试成都诚信平台接口。格式：{\"ptName\":\"成都彩虹电器（集团）股份有限公司\",\"pageNo\":\"1\",\"pageNum\":\"5\",\"userId\":\"deyang\",\"ipAddress\":\"192.168.42.95\"} select *
+		 * decode(nvl(t.org_no_type,0),0,t.org_no,t.org_shxy_no) as ,t.*,t.rowid from organization t;
+		 */
+		// getQyList:按页获取主体基础信息
+		getQyList();
+
+		// getQyDetail:获取主体基础信息
+		getQyDetail();
+
+		// getXzxkList:获取主体行政许可信息
+		getXzxkList();
+
+		// getBlxxList:获取主体不良信息
+		getBlxxList();
+
+		// getRyxxList:获取主体业绩信息
+		getRyxxList();
+
 		return SUCCESS;
 	}
 
+	/**
+	 * @Description:
+	 * @author zhoujian
+	 * @date 2016年6月14日 下午3:23:55
+	 */
+	private void getRyxxList() {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("userId", "shenzhenxinyong");// 用户id
+		map.put("ipAddress", "192.168.42.95");// 授信IP地址
+		map.put("ptSn", "5187047899");// 主体编号
+		String jsonString = JSONObject.fromObject(map).toString();
+		String qyList = cdxyWebserviceActionClient.getRyxxList(jsonString);
+		System.out.println(qyList);// {"code":"300","msg":"未查询到数据","ip":"58.250.204.14"}
+	}
+
+	/**
+	 * @Description:
+	 * @author zhoujian
+	 * @date 2016年6月14日 下午3:23:41
+	 */
+	private void getBlxxList() {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("userId", "shenzhenxinyong");// 用户id
+		map.put("ipAddress", "192.168.42.95");// 授信IP地址
+		map.put("ptSn", "5187047899");// 主体编号
+		String jsonString = JSONObject.fromObject(map).toString();
+		String qyList = cdxyWebserviceActionClient.getBlxxList(jsonString);
+		System.out.println(qyList);
+	}
+
+	/**
+	 * @Description:
+	 * @author zhoujian
+	 * @date 2016年6月14日 下午3:23:28
+	 */
+	private void getXzxkList() {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("userId", "shenzhenxinyong");// 用户id
+		map.put("ipAddress", "192.168.42.95");// 授信IP地址
+		map.put("ptSn", "5187047899");// 主体编号
+		String jsonString = JSONObject.fromObject(map).toString();
+		String qyList = cdxyWebserviceActionClient.getXzxkList(jsonString);
+		System.out.println(qyList);// {"code":"300","msg":"未查询到数据","ip":"58.250.204.14"}
+	}
+
+	/**
+	 * @Description:
+	 * @author zhoujian
+	 * @date 2016年6月14日 下午3:23:18
+	 */
+	private void getQyDetail() {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("userId", "shenzhenxinyong");// 用户id
+		map.put("ipAddress", "192.168.42.95");// 授信IP地址
+		map.put("ptSn", "5187047899");// 主体编号
+		String jsonString = JSONObject.fromObject(map).toString();
+		String qyList = cdxyWebserviceActionClient.getQyDetail(jsonString);
+		System.out.println(qyList);// "code": "200"
+	}
+
+	/**
+	 * @Description:
+	 * @author zhoujian
+	 * @date 2016年6月14日 下午3:23:09
+	 */
+	private void getQyList() {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("userId", "shenzhenxinyong");// 用户id
+		map.put("ipAddress", "192.168.42.95");// 授信IP地址
+		// map.put("regNo", "510100000109497");// 营业执照注册号
+		map.put("instCode", "077664403");// 组织机构代码
+		// map.put("idno", "915101002019667683");// 统一社会信用码
+		String jsonString = JSONObject.fromObject(map).toString();
+		String qyList = cdxyWebserviceActionClient.getQyList(jsonString);
+		System.out.println(qyList);
+	}
 }
