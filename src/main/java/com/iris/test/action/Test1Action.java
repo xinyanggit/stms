@@ -60,7 +60,8 @@ public class Test1Action extends ActionSupport {
 			System.out.println(infostr);
 		}*/
 
-		// 5、获得国内手机号码归属地省份、地区和手机卡类型信息</h3><p>输入参数：mobileCode = 字符串（手机号码，最少前7位数字），userID = 字符串（商业用户ID） 免费用户为空字符串；返回数据：字符串（手机号码：省份 城市 手机卡类型）。
+		// 5、获得国内手机号码归属地省份、地区和手机卡类型信息</h3><p>输入参数：mobileCode = 字符串（手机号码，最少前7位数字），userID = 字符串（商业用户ID）
+		// 免费用户为空字符串；返回数据：字符串（手机号码：省份 城市 手机卡类型）。
 		// System.out.println(mobileCodeWSSoapClient.getMobileCodeInfo("13714196207", null));
 
 		// 6、身份证查询:授权AuthKey：1edfa3bcce78449ca400b6af15c3c723请您在一个工作日内完成测试，此AuthKey将于2015-07-12 00:00:00过期，如商用请您购买服务。
