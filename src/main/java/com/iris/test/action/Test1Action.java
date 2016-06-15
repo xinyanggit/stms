@@ -167,9 +167,15 @@ public class Test1Action extends ActionSupport {
 		map.put("ipAddress", "192.168.42.95");// 授信IP地址
 		// map.put("regNo", "510100000109497");// 营业执照注册号
 		map.put("instCode", "077664403");// 组织机构代码
+		map.put("pageNo", "1");
+		map.put("pageNum", "10");
 		// map.put("idno", "915101002019667683");// 统一社会信用码
 		String jsonString = JSONObject.fromObject(map).toString();
 		String qyList = cdxyWebserviceActionClient.getQyList(jsonString);
 		System.out.println(qyList);
+
+		/*String jsonString = "{\"userId\":\"shenzhenxinyong\",\"instCode\":\"077664403\",\"ipAddress\":\"192.168.42.95\"}";
+		String qyList = cdxyWebserviceActionClient.getQyList(jsonString);
+		System.out.println(qyList);*/
 	}
 }
