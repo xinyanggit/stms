@@ -7,7 +7,7 @@ import java.util.UUID;
 
 /**
  * @copyright:Iris Systems(Shenzhen)Limited
- * @Description:
+ * @Description:测试uuid的生成
  * @author zhoujian
  * @date 2016年6月15日 上午9:32:16
  */
