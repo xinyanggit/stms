@@ -17,7 +17,6 @@ import org.apache.commons.io.LineIterator;
 
 /**
  * 测试Commons的IO工具类
- * 
  * @author admin
  */
 public class CommonIO {
@@ -37,7 +36,7 @@ public class CommonIO {
 		OutputStream outputStream = null;
 		try {
 			inputStream = new URL("http://182.150.36.121/egrantweb/").openStream();
-			outputStream = new FileOutputStream(new File("F:\\test.html"));
+			outputStream = new FileOutputStream(new File("E:\\test.html"));
 			IOUtils.copy(inputStream, outputStream);
 		} catch (Exception e) {
 			e.printStackTrace();
