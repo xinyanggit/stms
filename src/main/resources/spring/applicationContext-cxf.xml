@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xmlns:cxf="http://cxf.apache.org/core"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd 
+	http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+	
+	<import resource="classpath:META-INF/cxf/cxf.xml" />  
+    <import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />  
+    <import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+	
+	<!-- CXF发布webservice接口 -->
+ 	<jaxws:endpoint id="greetingService"  implementor="#helloWorldService" address="/greeting" />
+ 	
+ 	<!-- 远程调用webservice接口 -->
+	<jaxws:client id="helloWorldClient"  serviceClass="com.iris.test.webservice.client.IHelloWorld"  address="http://127.0.0.1:83/stms/webservice/greeting" />
+	
+	<!-- 远程调用webservice接口：获得国内手机号码归属地数据库信息，输入参数：无；返回数据：一维字符串数组（省份 城市 记录数量）。 -->
+	<jaxws:client id="mobileCodeWSSoapClient"  serviceClass="com.iris.test.webservice.mobileInfows.cn.com.webxml.MobileCodeWSSoap"  address="http://webservice.webxml.com.cn/WebServices/MobileCodeWS.asmx" />
+	
+	<!-- 身份证查询webservice接口 -->
+	<jaxws:client id="idCardServiceSoapClient"  serviceClass="com.iris.test.webservice.idcard.com._36wu.IdCardServiceSoap"  address="http://web.36wu.com/IdCardService.asmx" />
+	
+	<!-- 信用平台对接 -->
+	<jaxws:client id="cdxyWebserviceActionClient" 
+	serviceClass="com.iris.test.webservice.cxpt.ICdxyWebserviceActionPortType"  
+	address="http://118.122.92.102:7712/newCdxyWebservice/services/cdxyservice" />
+	
+</beans>
+
