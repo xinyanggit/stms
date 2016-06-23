@@ -23,4 +23,9 @@ public class TestJqueryAndPluginAction extends ActionSupport {
 		return SUCCESS;
 	}
 
+	public String jaauldeCookies() throws Exception {
+
+		return "jaauldeCookies";
+	}
+
 }

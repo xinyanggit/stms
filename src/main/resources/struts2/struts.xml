@@ -24,9 +24,10 @@
             <result name="success">WEB-INF/jsp/common/welcome.jsp</result>
         </action>
         
-        <action name="jquery-test" class="com.iris.test.action.TestJqueryAndPluginAction" method="execute">
-            <result name="success">WEB-INF/jsp/common/jquery-test.jsp</result>
+        <action name="jaaulde-cookies" class="com.iris.test.action.TestJqueryAndPluginAction" method="jaauldeCookies">
+            <result name="jaauldeCookies">WEB-INF/jsp/common/jaauldeCookies.jsp</result>
         </action>
+        
     </package>
     
 </struts>
