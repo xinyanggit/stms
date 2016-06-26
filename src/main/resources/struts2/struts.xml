@@ -25,7 +25,7 @@
         </action>
         
         <action name="jaaulde-cookies" class="com.iris.test.action.TestJqueryAndPluginAction" method="jaauldeCookies">
-            <result name="jaauldeCookies">WEB-INF/jsp/common/jaauldeCookies.jsp</result>
+            <result name="jaauldeCookies">WEB-INF/jsp/jaauldeCookies.jsp</result>
         </action>
         
     </package>
