@@ -1338,7 +1338,7 @@ SWFUpload.Console.writeLine = function(d) {
 					buttonImage : null, // (String or null) The path to an image
 										// to use for the Flash browse button if
 										// not using CSS to style the button
-					buttonText : 'SELECT FILES', // The text to use for the
+					buttonText : '选择文件', // The text to use for the
 													// browse button
 					checkExisting : false, // The path to a server-side script
 											// that checks for existing files on

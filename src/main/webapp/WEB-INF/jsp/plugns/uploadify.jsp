@@ -12,13 +12,15 @@
 $(function() {
     $('#file_upload').uploadify({
         'swf'      : 'plugns/uploadify/uploadify.swf',
-        'uploader' : 'plugns/uploadify/uploadify.php',
+        //'uploader' : 'plugns/uploadify/uploadify.php',
+        'uploader' : '/stms/uploadFile.action',
+        'buttonText':'请选择文件',
         'method'   : 'post',
         'formData' : {
         	'someKey' : 'someValue' 
         },
         'onUploadSuccess' : function(file, data, response) {
-            alert('The file was saved to: ' + data);
+            alert(data);
         }
     	
     });

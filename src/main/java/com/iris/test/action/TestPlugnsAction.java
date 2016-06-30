@@ -1,5 +1,7 @@
 package com.iris.test.action;
 
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -42,6 +44,12 @@ public class TestPlugnsAction extends ActionSupport {
 
 		String someKey = request.getParameter("someKey");
 		System.out.println(someKey);
+
+		response.setCharacterEncoding("utf-8");
+		PrintWriter w = response.getWriter();
+		w.write("返回的数据！");
+		w.flush();
+		w.close();
 
 		return null;
 	}
