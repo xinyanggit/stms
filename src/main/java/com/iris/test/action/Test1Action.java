@@ -5,17 +5,18 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import net.sf.json.JSONObject;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import com.iris.test.service.ITest1Service;
 import com.iris.test.webservice.client.IHelloWorld;
 import com.iris.test.webservice.cxpt.ICdxyWebserviceActionPortType;
+import com.iris.test.webservice.dxpt.ServiceSoap;
 import com.iris.test.webservice.idcard.com._36wu.IdCardServiceSoap;
 import com.iris.test.webservice.mobileInfows.cn.com.webxml.MobileCodeWSSoap;
 import com.opensymphony.xwork2.ActionSupport;
-
-import net.sf.json.JSONObject;
 
 @Controller
 public class Test1Action extends ActionSupport {
@@ -41,8 +42,15 @@ public class Test1Action extends ActionSupport {
 	@Autowired
 	private ICdxyWebserviceActionPortType cdxyWebserviceActionClient;
 
+	// 成都商务局短信平台对接
+	@Autowired
+	private ServiceSoap smsServiceClient;
+
 	@Override
 	public String execute() throws Exception {
+
+		// 8、成都商务局短信接口调试
+		cdmccSendSms();
 
 		// 1、调用短信接口测试
 		// TestSendSMS.sendSMS();
@@ -75,9 +83,8 @@ public class Test1Action extends ActionSupport {
 		System.out.println(idCard.getSex());*/
 
 		/**
-		 * 7、测试成都诚信平台接口。格式：{\
-		 * "ptName\":\"成都彩虹电器（集团）股份有限公司\",\"pageNo\":\"1\",\"pageNum\":\"5\",\"userId\":\"deyang\",\"ipAddress\":\"192.168.42.95\"}
-		 * select * decode(nvl(t.org_no_type,0),0,t.org_no,t.org_shxy_no) as ,t.*,t.rowid from organization t;
+		 * 7、测试成都诚信平台接口。格式：{\ "ptName\":\"成都彩虹电器（集团）股份有限公司\",\"pageNo\":\"1\",\"pageNum\":\"5\",\"userId\":\"deyang\",\"ipAddress\":\"192.168.42.95\"} select *
+		 * decode(nvl(t.org_no_type,0),0,t.org_no,t.org_shxy_no) as ,t.*,t.rowid from organization t;
 		 */
 		// getQyList:按页获取主体基础信息
 		// getQyList();
@@ -95,6 +102,23 @@ public class Test1Action extends ActionSupport {
 		// getRyxxList();
 
 		return SUCCESS;
+	}
+
+	/**
+	 * @Description:
+	 * @author zhoujian
+	 * @date 2016年7月2日 下午3:15:02
+	 */
+	private void cdmccSendSms() {
+		String uid = "96";// 用户名
+		String upass = "swwsms160701";// 密码
+		String message = "成都商务局短信平台对接测试！";
+		String phone = "13714196207";
+		int pid = 4;// 必须为4
+		String messid = "898989892";// 短信唯一标识,最大长度22,我们自定义为sms_log.mail_code
+
+		String returnsString = smsServiceClient.sendMessage(uid, upass, messid, pid, phone, message);
+		System.out.println("sendMessage()返回结果=" + returnsString);
 	}
 
 	/**

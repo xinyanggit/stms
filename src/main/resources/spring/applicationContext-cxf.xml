@@ -27,5 +27,10 @@
 	serviceClass="com.iris.test.webservice.cxpt.ICdxyWebserviceActionPortType"  
 	address="http://118.122.92.102:7712/newCdxyWebservice/services/cdxyservice" />
 	
+	<!-- 成都商务局短信平台对接 -->
+	<jaxws:client id="smsServiceClient" 
+	serviceClass="com.iris.test.webservice.dxpt.ServiceSoap"  
+	address="http://221.237.182.5:8088" />
+	
 </beans>
 
