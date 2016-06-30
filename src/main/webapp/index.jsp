@@ -11,5 +11,7 @@
 	<br />
 	<a href="/stms/jaaulde-cookies.action">jaaulde-cookies</a>
 	<br />
+	<a href="/stms/uploadify.action">uploadify</a>
+	<br />
 </body>
 </html>

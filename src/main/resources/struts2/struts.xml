@@ -24,8 +24,15 @@
             <result name="success">WEB-INF/jsp/common/welcome.jsp</result>
         </action>
         
-        <action name="jaaulde-cookies" class="com.iris.test.action.TestJqueryAndPluginAction" method="jaauldeCookies">
+        <action name="jaaulde-cookies" class="com.iris.test.action.TestPlugnsAction" method="jaauldeCookies">
             <result name="jaauldeCookies">WEB-INF/jsp/jaauldeCookies.jsp</result>
+        </action>
+        
+        <action name="uploadify" class="com.iris.test.action.TestPlugnsAction" method="uploadify">
+            <result name="uploadify">WEB-INF/jsp/plugns/uploadify.jsp</result>
+        </action>
+        
+        <action name="uploadFile" class="com.iris.test.action.TestPlugnsAction" method="uploadFile">
         </action>
         
     </package>
