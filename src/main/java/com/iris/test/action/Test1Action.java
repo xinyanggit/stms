@@ -50,7 +50,7 @@ public class Test1Action extends ActionSupport {
 	public String execute() throws Exception {
 
 		// 8、成都商务局短信接口调试
-		cdmccSendSms();
+		// cdmccSendSms();
 
 		// 1、调用短信接口测试
 		// TestSendSMS.sendSMS();
@@ -87,7 +87,7 @@ public class Test1Action extends ActionSupport {
 		 * decode(nvl(t.org_no_type,0),0,t.org_no,t.org_shxy_no) as ,t.*,t.rowid from organization t;
 		 */
 		// getQyList:按页获取主体基础信息
-		// getQyList();
+		getQyList();
 
 		// getQyDetail:获取主体基础信息
 		// getQyDetail();
@@ -110,15 +110,15 @@ public class Test1Action extends ActionSupport {
 	 * @date 2016年7月2日 下午3:15:02
 	 */
 	private void cdmccSendSms() {
-		String uid = "96";// 用户名
+		String uid = "69";// 用户名
 		String upass = "swwsms160701";// 密码
-		String message = "成都商务局短信平台对接测试！";
-		String phone = "13714196207";
+		String message = "成都商务局短信平台对接测试03！";
+		String phone = "15889681952";
 		int pid = 4;// 必须为4
 		String messid = "898989892";// 短信唯一标识,最大长度22,我们自定义为sms_log.mail_code
 
 		String returnsString = smsServiceClient.sendMessage(uid, upass, messid, pid, phone, message);
-		System.out.println("sendMessage()返回结果=" + returnsString);
+		System.out.println("message=" + message + "|sendMessage()返回结果=" + returnsString);
 	}
 
 	/**
@@ -189,9 +189,11 @@ public class Test1Action extends ActionSupport {
 	private void getQyList() {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("userId", "shenzhenxinyong");// 用户id
-		map.put("ipAddress", "192.168.42.95");// 授信IP地址
+		// map.put("ipAddress", "192.168.42.95");// 授信测试IP地址
+		map.put("ipAddress", "178.16.31.68");// 授信IP地址
 		// map.put("regNo", "510100000109497");// 营业执照注册号
-		map.put("instCode", "077664403");// 组织机构代码
+		// map.put("instCode", "077664403");// 组织机构代码测试
+		map.put("instCode", "564491415");// 组织机构代码
 		map.put("pageNo", "1");
 		map.put("pageNum", "10");
 		// map.put("idno", "915101002019667683");// 统一社会信用码
