@@ -92,7 +92,7 @@ public class Test1Action extends ActionSupport {
 		 * decode(nvl(t.org_no_type,0),0,t.org_no,t.org_shxy_no) as ,t.*,t.rowid from organization t;
 		 */
 		// getQyList:按页获取主体基础信息
-		getQyList();
+		// getQyList();
 
 		// getQyDetail:获取主体基础信息
 		// getQyDetail();
@@ -104,7 +104,7 @@ public class Test1Action extends ActionSupport {
 		// getBlxxList();
 
 		// getRyxxList:获取主体业绩信息
-		// getRyxxList();
+		getRyxxList();
 
 		return SUCCESS;
 	}
@@ -134,8 +134,8 @@ public class Test1Action extends ActionSupport {
 	private void getRyxxList() {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("userId", "shenzhenxinyong");// 用户id
-		map.put("ipAddress", "192.168.42.95");// 授信IP地址
-		map.put("ptSn", "5187047899");// 主体编号
+		map.put("ipAddress", "178.16.31.68");// 授信IP地址
+		map.put("ptSn", "5142586819");// 主体编号
 		String jsonString = JSONObject.fromObject(map).toString();
 		String qyList = cdxyWebserviceActionClient.getRyxxList(jsonString);
 		System.out.println(qyList);// {"code":"300","msg":"未查询到数据","ip":"58.250.204.14"}
@@ -149,8 +149,8 @@ public class Test1Action extends ActionSupport {
 	private void getBlxxList() {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("userId", "shenzhenxinyong");// 用户id
-		map.put("ipAddress", "192.168.42.95");// 授信IP地址
-		map.put("ptSn", "5187047899");// 主体编号
+		map.put("ipAddress", "178.16.31.68");// 授信IP地址
+		map.put("ptSn", "5142586819");// 主体编号
 		String jsonString = JSONObject.fromObject(map).toString();
 		String qyList = cdxyWebserviceActionClient.getBlxxList(jsonString);
 		System.out.println(qyList);
@@ -164,8 +164,8 @@ public class Test1Action extends ActionSupport {
 	private void getXzxkList() {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("userId", "shenzhenxinyong");// 用户id
-		map.put("ipAddress", "192.168.42.95");// 授信IP地址
-		map.put("ptSn", "5187047899");// 主体编号
+		map.put("ipAddress", "178.16.31.68");// 授信IP地址
+		map.put("ptSn", "5142586819");// 主体编号
 		String jsonString = JSONObject.fromObject(map).toString();
 		String qyList = cdxyWebserviceActionClient.getXzxkList(jsonString);
 		System.out.println(qyList);// {"code":"300","msg":"未查询到数据","ip":"58.250.204.14"}
@@ -179,8 +179,8 @@ public class Test1Action extends ActionSupport {
 	private void getQyDetail() {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("userId", "shenzhenxinyong");// 用户id
-		map.put("ipAddress", "192.168.42.95");// 授信IP地址
-		map.put("ptSn", "5187047899");// 主体编号
+		map.put("ipAddress", "178.16.31.68");// 授信IP地址
+		map.put("ptSn", "5142586819");// 主体编号
 		String jsonString = JSONObject.fromObject(map).toString();
 		String qyList = cdxyWebserviceActionClient.getQyDetail(jsonString);
 		System.out.println(qyList);// "code": "200"
@@ -198,7 +198,7 @@ public class Test1Action extends ActionSupport {
 		map.put("ipAddress", "178.16.31.68");// 授信IP地址
 		// map.put("regNo", "510100000109497");// 营业执照注册号
 		// map.put("instCode", "077664403");// 组织机构代码测试
-		map.put("instCode", "564491415");// 组织机构代码
+		map.put("instCode", "077679509");// 组织机构代码
 		map.put("pageNo", "1");
 		map.put("pageNum", "10");
 		// map.put("idno", "915101002019667683");// 统一社会信用码
