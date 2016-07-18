@@ -7,6 +7,8 @@ import javax.annotation.Resource;
 
 import net.sf.json.JSONObject;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -22,6 +24,9 @@ import com.opensymphony.xwork2.ActionSupport;
 public class Test1Action extends ActionSupport {
 
 	private static final long serialVersionUID = 1L;
+
+	// private static Logger logger = LoggerFactory.getLogger(Test1Action.class);
+	private static Log logger = LogFactory.getLog("Test1Action");
 
 	@Resource(name = "test1Service")
 	private ITest1Service test1Service;
@@ -199,7 +204,7 @@ public class Test1Action extends ActionSupport {
 		// map.put("idno", "915101002019667683");// 统一社会信用码
 		String jsonString = JSONObject.fromObject(map).toString();
 		String qyList = cdxyWebserviceActionClient.getQyList(jsonString);
-		System.out.println(qyList);
+		logger.info(qyList);
 
 		/*String jsonString = "{\"userId\":\"shenzhenxinyong\",\"instCode\":\"077664403\",\"ipAddress\":\"192.168.42.95\"}";
 		String qyList = cdxyWebserviceActionClient.getQyList(jsonString);
