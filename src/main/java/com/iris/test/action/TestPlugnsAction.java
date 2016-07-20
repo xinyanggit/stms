@@ -37,6 +37,10 @@ public class TestPlugnsAction extends ActionSupport {
 		return "uploadify";
 	}
 
+	public String artDialog() throws Exception {
+		return "artDialog";
+	}
+
 	public String uploadFile() throws Exception {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		HttpServletResponse response = ServletActionContext.getResponse();

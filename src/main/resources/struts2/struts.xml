@@ -35,6 +35,10 @@
         <action name="uploadFile" class="com.iris.test.action.TestPlugnsAction" method="uploadFile">
         </action>
         
+        <action name="artDialog" class="com.iris.test.action.TestPlugnsAction" method="artDialog">
+        	<result name="artDialog">WEB-INF/jsp/plugns/artDialog.jsp</result>
+        </action>
+        
     </package>
     
 </struts>

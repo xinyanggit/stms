@@ -13,5 +13,7 @@
 	<br />
 	<a href="/stms/uploadify.action">uploadify</a>
 	<br />
+	<a href="/stms/artDialog.action">artDialog</a>
+	<br />
 </body>
 </html>
