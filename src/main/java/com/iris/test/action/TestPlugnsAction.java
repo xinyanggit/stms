@@ -17,7 +17,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class TestPlugnsAction extends ActionSupport {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 
@@ -37,8 +37,12 @@ public class TestPlugnsAction extends ActionSupport {
 		return "uploadify";
 	}
 
-	public String artDialog() throws Exception {
-		return "artDialog";
+	public String artDialogV6() throws Exception {
+		return "artDialogV6";
+	}
+
+	public String artDialogV4() throws Exception {
+		return "artDialogV4";
 	}
 
 	public String uploadFile() throws Exception {

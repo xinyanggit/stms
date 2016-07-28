@@ -35,8 +35,12 @@
         <action name="uploadFile" class="com.iris.test.action.TestPlugnsAction" method="uploadFile">
         </action>
         
-        <action name="artDialog" class="com.iris.test.action.TestPlugnsAction" method="artDialog">
-        	<result name="artDialog">WEB-INF/jsp/plugns/artDialog.jsp</result>
+        <action name="artDialog_v6" class="com.iris.test.action.TestPlugnsAction" method="artDialogV6">
+        	<result name="artDialogV6">WEB-INF/jsp/plugns/artDialog_v6.jsp</result>
+        </action>
+        
+        <action name="artDialog_v4.1.7" class="com.iris.test.action.TestPlugnsAction" method="artDialogV4">
+        	<result name="artDialogV4">WEB-INF/jsp/plugns/artDialog_v4.jsp</result>
         </action>
         
     </package>

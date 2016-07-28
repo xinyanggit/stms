@@ -13,7 +13,9 @@
 	<br />
 	<a href="/stms/uploadify.action">uploadify</a>
 	<br />
-	<a href="/stms/artDialog.action">artDialog</a>
+	<a href="/stms/artDialog_v6.action">artDialog_v6</a>
+	<br />
+	<a href="/stms/artDialog_v4.1.7.action">artDialog_v4.1.7</a>
 	<br />
 </body>
 </html>
