@@ -17,5 +17,7 @@
 	<br />
 	<a href="/stms/artDialog_v4.1.7.action">artDialog_v4.1.7</a>
 	<br />
+	<a href="/stms/jquery-powerFloat.action">jquery-powerFloat</a>
+	<br />
 </body>
 </html>

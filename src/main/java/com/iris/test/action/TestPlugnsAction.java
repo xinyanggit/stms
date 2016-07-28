@@ -45,6 +45,10 @@ public class TestPlugnsAction extends ActionSupport {
 		return "artDialogV4";
 	}
 
+	public String jqueryPowerFloat() throws Exception {
+		return "jquery-powerFloat";
+	}
+
 	public String uploadFile() throws Exception {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		HttpServletResponse response = ServletActionContext.getResponse();

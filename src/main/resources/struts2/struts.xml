@@ -43,6 +43,10 @@
         	<result name="artDialogV4">WEB-INF/jsp/plugns/artDialog_v4.jsp</result>
         </action>
         
+        <action name="jquery-powerFloat" class="com.iris.test.action.TestPlugnsAction" method="jqueryPowerFloat">
+        	<result name="jquery-powerFloat">WEB-INF/jsp/plugns/jquery-powerFloat.jsp</result>
+        </action>
+        
     </package>
     
 </struts>
