@@ -4,9 +4,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title></title>
-<script src="plugns/artDialog/jquery-1.10.2.js"></script>
-<script src="plugns/artDialog/dialog-min.js"></script>
-<link rel="stylesheet" href="plugns/artDialog/ui-dialog.css">
+<script src="plugns/artDialog_v6/jquery-1.10.2.js"></script>
+<script src="plugns/artDialog_v6/dialog-min.js"></script>
+<link rel="stylesheet" href="plugns/artDialog_v6/ui-dialog.css">
 
 <script type="text/javascript">
 	$(function() {
