@@ -110,3 +110,4 @@
 	<input id="posTrigger1" type="text" /> <button id="trigger11">确定</button>
 </body>
 </html>
+
