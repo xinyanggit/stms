@@ -23,5 +23,7 @@
 	<br />
 	<a href="/stms/bootstrap.action">bootstrap</a>
 	<br />
+	<a href="/stms/jqueryTmpl.action">jquery-tmpl</a>
+	<br />
 </body>
 </html>

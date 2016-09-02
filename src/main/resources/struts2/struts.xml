@@ -55,6 +55,14 @@
         	<result name="bootstrap">WEB-INF/jsp/plugns/bootstrap.jsp</result>
         </action>
         
+        <action name="jqueryTmpl" class="com.iris.test.action.TestPlugnsAction" method="jqueryTmpl">
+        	<result name="jqueryTmpl">WEB-INF/jsp/plugns/jquery-tmpl.jsp</result>
+        </action>
+        
+        <action name="jqueryTmpl2" class="com.iris.test.action.TestPlugnsAction" method="jqueryTmpl2">
+        	<result name="jqueryTmpl2">WEB-INF/jsp/plugns/jquery-tmpl2.html</result>
+        </action>
+        
     </package>
     
 </struts>

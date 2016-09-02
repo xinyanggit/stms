@@ -57,6 +57,14 @@ public class TestPlugnsAction extends ActionSupport {
 		return "bootstrap";
 	}
 
+	public String jqueryTmpl() throws Exception {
+		return "jqueryTmpl";
+	}
+
+	public String jqueryTmpl2() throws Exception {
+		return "jqueryTmpl2";
+	}
+
 	public String uploadFile() throws Exception {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		HttpServletResponse response = ServletActionContext.getResponse();
