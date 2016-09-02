@@ -47,6 +47,14 @@
         	<result name="jquery-powerFloat">WEB-INF/jsp/plugns/jquery-powerFloat.jsp</result>
         </action>
         
+        <action name="jquery-loadMask" class="com.iris.test.action.TestPlugnsAction" method="jqueryLoadMask">
+        	<result name="jqueryLoadMask">WEB-INF/jsp/plugns/jqueryLoadMask.jsp</result>
+        </action>
+        
+        <action name="bootstrap" class="com.iris.test.action.TestPlugnsAction" method="bootstrap">
+        	<result name="bootstrap">WEB-INF/jsp/plugns/bootstrap.jsp</result>
+        </action>
+        
     </package>
     
 </struts>

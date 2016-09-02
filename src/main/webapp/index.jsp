@@ -19,5 +19,9 @@
 	<br />
 	<a href="/stms/jquery-powerFloat.action">jquery-powerFloat</a>
 	<br />
+	<a href="/stms/jquery-loadMask.action">jQuery LoadMask</a>
+	<br />
+	<a href="/stms/bootstrap.action">bootstrap</a>
+	<br />
 </body>
 </html>

@@ -49,6 +49,14 @@ public class TestPlugnsAction extends ActionSupport {
 		return "jquery-powerFloat";
 	}
 
+	public String jqueryLoadMask() throws Exception {
+		return "jqueryLoadMask";
+	}
+
+	public String bootstrap() throws Exception {
+		return "bootstrap";
+	}
+
 	public String uploadFile() throws Exception {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		HttpServletResponse response = ServletActionContext.getResponse();
