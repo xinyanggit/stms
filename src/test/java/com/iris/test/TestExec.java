@@ -11,7 +11,7 @@ public class TestExec {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		System.out.println(ping("www.baidu.com1"));
+		System.out.println(ping("www.baidu.com"));
 	}
 
 	public static String ping(String ip) {
