@@ -25,5 +25,8 @@
 	<br />
 	<a href="/stms/jqueryTmpl.action">jquery-tmpl</a>
 	<br />
+	
+	<a href="/stms/hightCharts.action">hightCharts</a>
+	<br />
 </body>
 </html>

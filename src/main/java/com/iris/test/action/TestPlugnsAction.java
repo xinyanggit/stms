@@ -65,6 +65,10 @@ public class TestPlugnsAction extends ActionSupport {
 		return "jqueryTmpl2";
 	}
 
+	public String hightCharts() throws Exception {
+		return "hightCharts";
+	}
+
 	public String uploadFile() throws Exception {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		HttpServletResponse response = ServletActionContext.getResponse();

@@ -63,6 +63,10 @@
         	<result name="jqueryTmpl2">WEB-INF/jsp/plugns/jquery-tmpl2.html</result>
         </action>
         
+        <action name="hightCharts" class="com.iris.test.action.TestPlugnsAction" method="hightCharts">
+        	<result name="hightCharts">WEB-INF/jsp/plugns/hightCharts.jsp</result>
+        </action>
+        
     </package>
     
 </struts>
