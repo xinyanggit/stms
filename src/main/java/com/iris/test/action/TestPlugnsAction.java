@@ -29,6 +29,23 @@ public class TestPlugnsAction extends ActionSupport {
 		return SUCCESS;
 	}
 
+	public String uploadFile() throws Exception {
+		HttpServletRequest request = ServletActionContext.getRequest();
+		HttpServletResponse response = ServletActionContext.getResponse();
+		HttpSession session = ServletActionContext.getRequest().getSession();
+
+		String someKey = request.getParameter("someKey");
+		System.out.println(someKey);
+
+		response.setCharacterEncoding("utf-8");
+		PrintWriter w = response.getWriter();
+		w.write("返回的数据！");
+		w.flush();
+		w.close();
+
+		return null;
+	}
+
 	public String jaauldeCookies() throws Exception {
 		return "jaauldeCookies";
 	}
@@ -69,21 +86,8 @@ public class TestPlugnsAction extends ActionSupport {
 		return "hightCharts";
 	}
 
-	public String uploadFile() throws Exception {
-		HttpServletRequest request = ServletActionContext.getRequest();
-		HttpServletResponse response = ServletActionContext.getResponse();
-		HttpSession session = ServletActionContext.getRequest().getSession();
-
-		String someKey = request.getParameter("someKey");
-		System.out.println(someKey);
-
-		response.setCharacterEncoding("utf-8");
-		PrintWriter w = response.getWriter();
-		w.write("返回的数据！");
-		w.flush();
-		w.close();
-
-		return null;
+	public String jqGrid() throws Exception {
+		return "jqGrid";
 	}
 
 }

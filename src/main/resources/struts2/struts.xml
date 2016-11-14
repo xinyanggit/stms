@@ -67,6 +67,10 @@
         	<result name="hightCharts">WEB-INF/jsp/plugns/hightCharts.jsp</result>
         </action>
         
+        <action name="jqGrid" class="com.iris.test.action.TestPlugnsAction" method="jqGrid">
+        	<result name="jqGrid">WEB-INF/jsp/plugns/jqGrid.jsp</result>
+        </action>
+        
     </package>
     
 </struts>
