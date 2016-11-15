@@ -98,4 +98,8 @@ public class TestPlugnsAction extends ActionSupport {
 		return "maxazan-jquery-treegrid";
 	}
 
+	public String rowspan() throws Exception {
+		return "rowspan";
+	}
+
 }

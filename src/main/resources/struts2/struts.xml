@@ -79,6 +79,10 @@
         	<result name="maxazan-jquery-treegrid">WEB-INF/jsp/plugns/maxazan-jquery-treegrid.jsp</result>
         </action>
         
+        <action name="rowspan" class="com.iris.test.action.TestPlugnsAction" method="rowspan">
+        	<result name="rowspan">WEB-INF/jsp/plugns/rowspan.jsp</result>
+        </action>
+        
     </package>
     
 </struts>
