@@ -90,4 +90,8 @@ public class TestPlugnsAction extends ActionSupport {
 		return "jqGrid";
 	}
 
+	public String jqGridTreeGrid() throws Exception {
+		return "jqGridTreeGrid";
+	}
+
 }

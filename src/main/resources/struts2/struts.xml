@@ -71,6 +71,10 @@
         	<result name="jqGrid">WEB-INF/jsp/plugns/jqGrid.jsp</result>
         </action>
         
+        <action name="jqGridTreeGrid" class="com.iris.test.action.TestPlugnsAction" method="jqGridTreeGrid">
+        	<result name="jqGridTreeGrid">WEB-INF/jsp/plugns/jqGridTreeGrid.jsp</result>
+        </action>
+        
     </package>
     
 </struts>
