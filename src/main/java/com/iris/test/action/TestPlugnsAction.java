@@ -94,4 +94,8 @@ public class TestPlugnsAction extends ActionSupport {
 		return "jqGridTreeGrid";
 	}
 
+	public String maxazanJqueryTreegrid() throws Exception {
+		return "maxazan-jquery-treegrid";
+	}
+
 }

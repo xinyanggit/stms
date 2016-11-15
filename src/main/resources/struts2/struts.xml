@@ -75,6 +75,10 @@
         	<result name="jqGridTreeGrid">WEB-INF/jsp/plugns/jqGridTreeGrid.jsp</result>
         </action>
         
+        <action name="maxazan-jquery-treegrid" class="com.iris.test.action.TestPlugnsAction" method="maxazanJqueryTreegrid">
+        	<result name="maxazan-jquery-treegrid">WEB-INF/jsp/plugns/maxazan-jquery-treegrid.jsp</result>
+        </action>
+        
     </package>
     
 </struts>
